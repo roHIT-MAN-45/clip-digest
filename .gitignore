@@ -34,3 +34,6 @@ htmlcov/
 # os files
 .DS_Store
 Thumbs.db
+
+# claude code
+.claude/
