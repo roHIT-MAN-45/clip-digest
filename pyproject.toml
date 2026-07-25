@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "clip-digest"
-version = "1.0.0"
+version = "1.0.1"
 description = "Extract frames and a transcript from a single video."
 readme = "README.md"
 license = "MIT"
