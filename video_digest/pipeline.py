@@ -4,7 +4,7 @@ from dataclasses import field, dataclass
 
 from .config import Config
 from .frames import extract_frames
-from .transcript import Segment, extract_transcript
+from .transcript import Segment, extract_transcript, has_audio_stream
 
 logger = logging.getLogger(__name__)
 
@@ -36,10 +36,12 @@ def run(*, video_path: str | Path, config: Config | None = None) -> Result:
         logger.info("extracting frames.", extra={"video": video_path.name})
         frame_count = extract_frames(video_path=video_path, output_dir=frames_dir, config=config)
 
-    if config.should_transcribe:
+    if config.should_transcribe and has_audio_stream(video_path=video_path):
         transcript_dir = output_dir / TRANSCRIPT_DIR_NAME
         logger.info("transcribing audio.", extra={"video": video_path.name})
         segments = extract_transcript(video_path=video_path, output_dir=transcript_dir, config=config)
+    elif config.should_transcribe:
+        logger.info("no audio track found.", extra={"video": video_path.name})
 
     return Result(
         frame_count=frame_count,

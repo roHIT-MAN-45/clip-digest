@@ -1,5 +1,6 @@
 import json
 import logging
+import subprocess
 from pathlib import Path
 from dataclasses import asdict, dataclass
 
@@ -57,6 +58,22 @@ def to_segments(result: dict) -> list[Segment]:
         segments.append(Segment(start=round(start, 3), end=round(end, 3), text=raw["text"].strip()))
 
     return segments
+
+
+# reports whether the video carries at least one audio stream
+def has_audio_stream(video_path: str | Path) -> bool:
+    result = subprocess.run(
+        [
+            "ffprobe", "-v", "error",
+            "-select_streams", "a",
+            "-show_entries", "stream=index",
+            "-of", "csv=p=0",
+            str(video_path),
+        ],
+        capture_output=True,
+        text=True,
+    )
+    return bool(result.stdout.strip())
 
 
 # transcribes the video into output_dir and returns the segments
