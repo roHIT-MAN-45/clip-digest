@@ -22,12 +22,12 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/roHIT-MAN-45/video-digest"
-Repository = "https://github.com/roHIT-MAN-45/video-digest"
-Issues = "https://github.com/roHIT-MAN-45/video-digest/issues"
+Homepage = "https://github.com/roHIT-MAN-45/clip-digest"
+Repository = "https://github.com/roHIT-MAN-45/clip-digest"
+Issues = "https://github.com/roHIT-MAN-45/clip-digest/issues"
 
 [project.scripts]
-video-digest = "video_digest.cli:main"
+clip-digest = "clip_digest.cli:main"
 
 [tool.setuptools]
-packages = ["video_digest"]
+packages = ["clip_digest"]

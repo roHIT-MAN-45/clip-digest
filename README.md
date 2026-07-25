@@ -1,4 +1,4 @@
-# video-digest
+# clip-digest
 
 Extract frames and an accurate transcript from a single video. Point it at a
 video and it writes timestamped image frames and a timestamped transcript. It
@@ -27,7 +27,7 @@ pip install .
 Call `run` with a video path. With no config, balanced defaults apply.
 
 ```python
-from video_digest import Config, run
+from clip_digest import Config, run
 
 result = run(video_path="meeting.mp4")
 
@@ -55,7 +55,7 @@ result = run(video_path="entrevista.mp4", config=config)
 Branch on typed errors:
 
 ```python
-from video_digest import run, VideoNotFoundError, MissingDependencyError, ConfigError
+from clip_digest import run, VideoNotFoundError, MissingDependencyError, ConfigError
 
 try:
     result = run(video_path=path)
@@ -105,6 +105,6 @@ output/<video_stem>/
 A thin CLI is provided for manual use:
 
 ```bash
-video-digest meeting.mp4 --frame-rate 2 --image-format png
-video-digest meeting.mp4 --only-transcript --language en
+clip-digest meeting.mp4 --frame-rate 2 --image-format png
+clip-digest meeting.mp4 --only-transcript --language en
 ```
