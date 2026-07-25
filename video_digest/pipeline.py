@@ -25,7 +25,7 @@ class Result:
 def run(*, video_path: str | Path, config: Config | None = None) -> Result:
     video_path = Path(video_path)
     config = config or Config()
-    output_dir = config.output_root / video_path.stem
+    output_dir = Path(config.output_root) / video_path.stem
     frame_count = 0
     frames_dir = None
     segments: list[Segment] = []
