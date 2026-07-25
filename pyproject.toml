@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "video-digest"
+version = "1.0.0"
+description = "Extract frames and a transcript from a single video."
+requires-python = ">=3.10"
+dependencies = ["openai-whisper>=20231117"]
+
+[project.scripts]
+video-digest = "video_digest.cli:main"
+
+[tool.setuptools]
+packages = ["video_digest"]

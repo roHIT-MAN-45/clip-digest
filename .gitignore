@@ -1,0 +1,36 @@
+# byte-compiled and optimized files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# distribution and packaging
+build/
+dist/
+*.egg-info/
+*.egg
+
+# virtual environments
+.venv/
+venv/
+env/
+
+# pipeline output
+output/
+
+# test and coverage artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# type checker and linter caches
+.mypy_cache/
+.ruff_cache/
+
+# editor and ide
+.vscode/
+.idea/
+*.swp
+
+# os files
+.DS_Store
+Thumbs.db
