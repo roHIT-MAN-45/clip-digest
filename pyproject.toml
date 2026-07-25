@@ -1,13 +1,30 @@
 [build-system]
-requires = ["setuptools>=68"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "video-digest"
+name = "clip-digest"
 version = "1.0.0"
 description = "Extract frames and a transcript from a single video."
+readme = "README.md"
+license = "MIT"
+license-files = ["LICENSE"]
 requires-python = ">=3.10"
+authors = [{ name = "Rohit Chavan", email = "rohitchavan110116114@gmail.com" }]
+keywords = ["video", "frames", "transcript", "whisper", "ffmpeg"]
 dependencies = ["openai-whisper>=20231117"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Topic :: Multimedia :: Video",
+    "Topic :: Multimedia :: Sound/Audio :: Speech",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/roHIT-MAN-45/video-digest"
+Repository = "https://github.com/roHIT-MAN-45/video-digest"
+Issues = "https://github.com/roHIT-MAN-45/video-digest/issues"
 
 [project.scripts]
 video-digest = "video_digest.cli:main"

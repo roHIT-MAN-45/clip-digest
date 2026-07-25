@@ -13,6 +13,12 @@ is configured through a single object and returns a structured result.
 ## Install
 
 ```bash
+pip install clip-digest
+```
+
+Install from a local checkout instead:
+
+```bash
 pip install .
 ```
 
