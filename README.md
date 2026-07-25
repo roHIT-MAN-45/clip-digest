@@ -2,7 +2,7 @@
 
 Extract frames and an accurate transcript from a single video. Point it at a
 video and it writes timestamped image frames and a timestamped transcript. It
-is built to be driven by an AI agent through a single configuration object.
+is configured through a single object and returns a structured result.
 
 ## Requirements
 
@@ -16,7 +16,7 @@ is built to be driven by an AI agent through a single configuration object.
 pip install .
 ```
 
-## Agent usage
+## Usage
 
 Call `run` with a video path. With no config, balanced defaults apply.
 

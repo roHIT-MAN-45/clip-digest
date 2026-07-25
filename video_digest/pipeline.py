@@ -12,7 +12,7 @@ FRAMES_DIR_NAME = "frames"
 TRANSCRIPT_DIR_NAME = "transcript"
 
 
-# structured result the calling agent reads instead of parsing output
+# structured result returned to the caller instead of parsing output
 @dataclass(frozen=True)
 class Result:
     frame_count: int = 0
